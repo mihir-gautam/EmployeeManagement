@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build EmployeeManagement/EmployeeManagement.csproj --configuration Release
     - name: Test
       run: dotnet test --logger "trx;LogFileName=test_results.xml" --results-directory TestResults --configuration Release
     - name: Publish Artifact
