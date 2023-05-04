@@ -20,11 +20,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build EmployeeManagement/EmployeeManagement.csproj --configuration Release
+      run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --logger "trx;LogFileName=test_results.xml" --results-directory TestResults --configuration Release
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
         name: EmployeeManagement
-        path: bin/Release/netcoreapp3.1
+        path: bin
